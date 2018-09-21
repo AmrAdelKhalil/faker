@@ -32,7 +32,7 @@ module Faker
       end
 
       def last_name
-        parse('name.last_name')
+        parse('name.last_name').gsub(/&#\d+;/) {|d| d[2..-2].to_i.chr}
       end
       alias middle_name last_name
 
